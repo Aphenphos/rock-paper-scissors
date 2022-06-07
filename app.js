@@ -4,6 +4,9 @@ import { getRandomItem, win, lose, tie } from './utils.js';
 
 const throwOptions = ['rock', 'paper', 'scissors'];
 
+let totalWins = 0;
+let totalTies = 0;
+let totalLosses = 0;
 
 let playerPoints = 0;
 let computerPoints = 0;
@@ -15,35 +18,41 @@ const scissorsButton = document.getElementById('scissors-button');
 
 function determineGame(playerThrow) { 
     computerThrow = getRandomItem(throwOptions);
-    if (playerThrow === computerThrow) tie();
+    if (playerThrow === computerThrow){ tie(); totalTies++;}
     if (playerThrow === 'rock' && computerThrow === 'scissors'){
         playerPoints++;
         computerPoints--;
+        totalWins++;
         win();
     }
     if (playerThrow === 'scissors' && computerThrow === 'paper'){
         playerPoints++;
         computerPoints--;
+        totalWins++;
         win();
     }
     if (playerThrow === 'paper' && computerThrow === 'rock'){
         playerPoints++;
         computerPoints--;
+        totalWins++;
         win();
     }
     if (playerThrow === 'rock' && computerThrow === 'paper'){
         playerPoints--;
         computerPoints++;
+        totalLosses++;
         lose();
     }
     if (playerThrow === 'paper' && computerThrow === 'scissors'){
         playerPoints--;
         computerPoints++;
+        totalLosses++;
         lose();
     }
     if (playerThrow === 'scissors' && computerThrow === 'rock'){
         playerPoints--;
         computerPoints++;
+        totalLosses++;
         lose();
     }
     updateScore();
@@ -64,11 +73,17 @@ paperButton.addEventListener('click', () => {
 
 const playerPointsDisplay = document.getElementById('player-points');
 const computerPointsDisplay = document.getElementById('computer-points');
-
+const totalWinsDisplay = document.getElementById('total-wins');
+const totalTiesDisplay = document.getElementById('total-ties');
+const totalLossesDisplay = document.getElementById('total-losses');
 
 function updateScore() {
     playerPointsDisplay.textContent = playerPoints;
     computerPointsDisplay.textContent = computerPoints;
+    totalWinsDisplay.textContent = totalWins;
+    totalLossesDisplay.textContent = totalLosses;
+    totalTiesDisplay.textContent = totalTies;
+
 }
 
 updateScore();
