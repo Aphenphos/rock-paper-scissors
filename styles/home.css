@@ -1,6 +1,23 @@
 /* add css for index.html */
 
+#user-input {
+    align-items: center;
+    justify-content: center;
+    display: flex;    
+    width: 100%;
+}
 
+#stat-display {
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+}
+
+.input-button {
+    height: 300px;
+    width: 300px;
+    margin: 30px;
+}
 
 .you-won {
     font-size: 100px;

@@ -18,19 +18,24 @@ function determineGame(playerThrow, computerThrow) {
     if (playerThrow === computerThrow) {return 'tie';}
     if (playerThrow === 'rock'){
         if (computerThrow === 'scissors') return 'player wins';
+        playerPoints++;
     } else {
+        computerPoints++;
         return 'computer wins';
     }
     if (playerThrow === 'scissors'){
         if (computerThrow === 'paper') return 'player wins';
+        playerPoints++;
     } else {
+        computerPoints++;
         return 'computer wins';
     }
     if (playerThrow === 'paper'){
         if (computerThrow === 'rock') return 'player wins';
+        playerPoints++;
     } else {
+        computerPoints++;
         return 'computer wins';}
-    console.log(computerThrow);
 }
 
 rockButton.addEventListener('click', () => {
