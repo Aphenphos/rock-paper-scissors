@@ -13,7 +13,7 @@ const rockButton = document.getElementById('rock-button');
 const paperButton = document.getElementById('paper-button');
 const scissorsButton = document.getElementById('scissors-button');
 
-function determineGame(playerThrow) { 
+function determineGame(playerThrow, computerThrow) { 
     computerThrow = getRandomItem(throwOptions);
     if (playerThrow === computerThrow) {return 'tie';}
     if (playerThrow === 'rock'){

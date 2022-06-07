@@ -1,1 +1,18 @@
 /* add css for index.html */
+
+
+
+.you-won {
+    font-size: 100px;
+    color: green;
+}
+
+.you-lost {
+    font-size: 100px;
+    color: red;
+}
+
+.you-tied {
+    font-size: 100px;
+    color: yellow;
+}
