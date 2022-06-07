@@ -15,21 +15,33 @@
 
 .input-button {
     height: 300px;
-    width: 300px;
+    width: 25%;
     margin: 30px;
 }
 
+#game-result-display {
+    z-index: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    pointer-events: none;
+    opacity: 75%;
+}
+
 .you-won {
-    font-size: 100px;
+    font-size: 60px;
     color: green;
 }
 
-.you-lost {
-    font-size: 100px;
+.you-lose {
+    font-size: 60px;
     color: red;
 }
 
 .you-tied {
-    font-size: 100px;
+    font-size: 60px;
     color: yellow;
 }

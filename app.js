@@ -1,8 +1,9 @@
-import { getRandomItem } from './utils';
+import { getRandomItem, win, lose, tie } from './utils.js';
 
 
 
 const throwOptions = ['rock', 'paper', 'scissors'];
+
 
 let playerPoints = 0;
 let computerPoints = 0;
@@ -13,34 +14,45 @@ const rockButton = document.getElementById('rock-button');
 const paperButton = document.getElementById('paper-button');
 const scissorsButton = document.getElementById('scissors-button');
 
-function determineGame(playerThrow, computerThrow) { 
+function determineGame(playerThrow) { 
     computerThrow = getRandomItem(throwOptions);
-    if (playerThrow === computerThrow) {return 'tie';}
-    if (playerThrow === 'rock'){
-        if (computerThrow === 'scissors') return 'player wins';
+    if (playerThrow === computerThrow) tie();
+    if (playerThrow === 'rock' && computerThrow === 'scissors'){
         playerPoints++;
-    } else {
-        computerPoints++;
-        return 'computer wins';
+        computerPoints--;
+        win();
     }
-    if (playerThrow === 'scissors'){
-        if (computerThrow === 'paper') return 'player wins';
+    if (playerThrow === 'scissors' && computerThrow === 'paper'){
         playerPoints++;
-    } else {
-        computerPoints++;
-        return 'computer wins';
+        computerPoints--;
+        win();
     }
-    if (playerThrow === 'paper'){
-        if (computerThrow === 'rock') return 'player wins';
+    if (playerThrow === 'paper' && computerThrow === 'rock'){
         playerPoints++;
-    } else {
+        computerPoints--;
+        win();
+    }
+    if (playerThrow === 'rock' && computerThrow === 'paper'){
+        playerPoints--;
         computerPoints++;
-        return 'computer wins';}
+        lose();
+    }
+    if (playerThrow === 'paper' && computerThrow === 'scissors'){
+        playerPoints--;
+        computerPoints++;
+        lose();
+    }
+    if (playerThrow === 'scissors' && computerThrow === 'rock'){
+        playerPoints--;
+        computerPoints++;
+        lose();
+    }
+    updateScore();
 }
+    
 
 rockButton.addEventListener('click', () => {
     determineGame('rock');
-    console.log('clicked');
 });
 
 scissorsButton.addEventListener('click', () => {
@@ -51,4 +63,14 @@ paperButton.addEventListener('click', () => {
     determineGame('scissors');
 });
 
+const playerPointsDisplay = document.getElementById('player-points');
+const computerPointsDisplay = document.getElementById('computer-points');
 
+
+function updateScore() {
+    playerPointsDisplay.textContent = playerPoints;
+    computerPointsDisplay.textContent = computerPoints;
+    console.log('running');
+}
+
+updateScore();
