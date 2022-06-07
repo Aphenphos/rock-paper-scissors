@@ -7,7 +7,6 @@ const throwOptions = ['rock', 'paper', 'scissors'];
 
 let playerPoints = 0;
 let computerPoints = 0;
-let playerThrow = '';
 let computerThrow = '';
 
 const rockButton = document.getElementById('rock-button');
@@ -70,7 +69,6 @@ const computerPointsDisplay = document.getElementById('computer-points');
 function updateScore() {
     playerPointsDisplay.textContent = playerPoints;
     computerPointsDisplay.textContent = computerPoints;
-    console.log('running');
 }
 
 updateScore();

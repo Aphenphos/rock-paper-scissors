@@ -7,6 +7,11 @@
     width: 100%;
 }
 
+.display-images {
+    height: 300px;
+    width: 300px;
+}
+
 #stat-display {
     justify-content: space-evenly;
     display: flex;
@@ -14,8 +19,6 @@
 }
 
 .input-button {
-    height: 300px;
-    width: 25%;
     margin: 30px;
 }
 
