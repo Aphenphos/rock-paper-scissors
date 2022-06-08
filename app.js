@@ -7,6 +7,7 @@ const throwOptions = ['rock', 'paper', 'scissors'];
 let totalWins = 0;
 let totalTies = 0;
 let totalLosses = 0;
+let totalGames = totalWins + totalTies + totalLosses;
 
 let playerPoints = 0;
 let computerPoints = 0;
@@ -76,6 +77,7 @@ const computerPointsDisplay = document.getElementById('computer-points');
 const totalWinsDisplay = document.getElementById('total-wins');
 const totalTiesDisplay = document.getElementById('total-ties');
 const totalLossesDisplay = document.getElementById('total-losses');
+const totalGamesDisplay = document.getElementById('total-games');
 
 function updateScore() {
     playerPointsDisplay.textContent = playerPoints;
@@ -83,6 +85,7 @@ function updateScore() {
     totalWinsDisplay.textContent = totalWins;
     totalLossesDisplay.textContent = totalLosses;
     totalTiesDisplay.textContent = totalTies;
+    totalGamesDisplay.textContent = totalGames;
 
 }
 
