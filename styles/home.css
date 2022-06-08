@@ -1,1 +1,64 @@
 /* add css for index.html */
+
+#user-input {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;    
+    width: 100%;
+}
+
+.display-images {
+    height: 330px;
+    width: 330px;
+
+}
+
+#stat-display {
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.input-button {
+    height: 360px;
+    width: 360px;
+    margin: 30px;
+    padding: 0;
+}
+
+
+#game-result-display {
+    z-index: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    pointer-events: none;
+    opacity: 75%;
+}
+
+#total-display{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+}
+
+.you-won {
+    font-size: 60px;
+    color: green;
+}
+
+.you-lose {
+    font-size: 60px;
+    color: red;
+}
+
+.you-tied {
+    font-size: 60px;
+    color: yellow;
+}

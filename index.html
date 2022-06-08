@@ -19,12 +19,35 @@
     </header>
 
     <main>
+        <div id="game-result-display">
+            <h1 id="win-or-lose"></h1>
+        </div>
+        <div id="user-input">
+        <button id="rock-button" class="input-button" img><img src='assets/rock.jpg' class="display-images">Rock</button>
+        <button id="paper-button" class="input-button"><img src='assets/paper.jpg' class="display-images">Paper</button>
+        <button id="scissors-button" class="input-button"><img src='assets/scissors.jpg' class="display-images">Scissors</button>
+        </div>
+        <div id ="stat-display">
+            <label>Your points
+            <h1 id="player-points">0</h2>
+            </label>
+            <label>Total Games<h1 id="total-games">0</h1></label>
+            <label>Computer points
+            <h1 id="computer-points">0</h2>
+            </label>
+        </div>
+        <div id="total-display">
+            <label>Wins<h1 id="total-wins">0</h1></label>
+            <label>Ties<h1 id="total-ties">0</h1></label>
+            <label>Losses<h1 id="total-losses">0</h1></label>
+        </div>
 
     </main>
 
     <footer>&copy;2021 Aspiring Software Developer</footer>
 
     <script type="module" src="app.js"></script>
+    
 </body>
 
 </html>
