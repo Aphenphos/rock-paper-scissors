@@ -1,6 +1,6 @@
 // IMPORT code to test here
 // import { fn } from '../module.js';
-import {score} from '../utils.js';
+import { score } from '../utils.js';
 const test = QUnit.test;
 
 test('test your pure functions...', (expect) => {
