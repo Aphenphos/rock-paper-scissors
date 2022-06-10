@@ -1,4 +1,4 @@
-import { getRandomItem, win, lose, tie } from './utils.js';
+import { getRandomItem, win, lose, tie, score } from './utils.js';
 
 
 
@@ -18,45 +18,24 @@ const scissorsButton = document.getElementById('scissors-button');
 
 function determineGame(playerThrow) { 
     computerThrow = getRandomItem(throwOptions);
-    if (playerThrow === computerThrow){ tie(); totalTies++;}
-    if (playerThrow === 'rock' && computerThrow === 'scissors'){
+    const result = score(playerThrow, computerThrow); 
+    if (result === 0) {
+        tie(); totalTies++;}
+    if (result === 1) {
+        win(); 
+        totalWins++;
         playerPoints++;
         computerPoints--;
-        totalWins++;
-        win();
     }
-    if (playerThrow === 'scissors' && computerThrow === 'paper'){
-        playerPoints++;
-        computerPoints--;
-        totalWins++;
-        win();
-    }
-    if (playerThrow === 'paper' && computerThrow === 'rock'){
-        playerPoints++;
-        computerPoints--;
-        totalWins++;
-        win();
-    }
-    if (playerThrow === 'rock' && computerThrow === 'paper'){
+    if (result === -1){ 
+        lose(); 
+        totalLosses++;
         playerPoints--;
         computerPoints++;
-        totalLosses++;
-        lose();
-    }
-    if (playerThrow === 'paper' && computerThrow === 'scissors'){
-        playerPoints--;
-        computerPoints++;
-        totalLosses++;
-        lose();
-    }
-    if (playerThrow === 'scissors' && computerThrow === 'rock'){
-        playerPoints--;
-        computerPoints++;
-        totalLosses++;
-        lose();
     }
     updateScore();
 }
+
     
 
 rockButton.addEventListener('click', () => {
