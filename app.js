@@ -62,8 +62,6 @@ function updateScore() {
     totalWinsDisplay.textContent = totalWins;
     totalLossesDisplay.textContent = totalLosses;
     totalTiesDisplay.textContent = totalTies;
-
-
 }
 
 updateScore();
